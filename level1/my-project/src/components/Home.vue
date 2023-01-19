@@ -25,36 +25,17 @@ export default {
            "L'heroi va decidir travessar la porta que el portava a casa", 
            
            "Mentrestant, altres herois no van tenir tanta sort en la seva elecció ..."],
-           currentSentence: 0,
-           next: true,
-           back: false
+           currentSentence: 0
         }
     },
     methods: {
         pasarFrase(n) {
-            if(this.currentSentence == 1) {
-                this.back = true;
-            } else if(this.currentSentence == 0) {
-                this.back = false;
-                this.next = true;
-            }
-
-            if(n == 1 && this.back == true ) {
-                this.currentSentence--;
-            }
-             
-            if(n == 2 && this.next == true) {
-                this.currentSentence++
-            } 
-            
-            if(this.currentSentence == 3) {
-                this.next = false;
-                this.back = true;
-            } 
-            
-            console.log(this.currentSentence);
-            console.log("Next: " + this.next);
-            console.log("Back: " + this.back);
+            this.currentSentence += n;
+            if(this.currentSentence > this.frasesArray.length - 1) {
+                this.currentSentence = 0;
+            } else if(this.currentSentence < 0) {
+                this.currentSentence = this.frasesArray.length - 1;
+                }
         }
     }
 }

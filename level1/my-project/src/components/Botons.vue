@@ -1,7 +1,7 @@
 <template>
     <div id="button">
-        <button @click="$emit('botons', 1)">Anterior</button>
-        <button @click="$emit('botons', 2)">Següent</button>
+        <button @click="$emit('botons', -1)">Anterior</button>
+        <button @click="$emit('botons', 1)">Següent</button>
     </div>
 </template>
 
